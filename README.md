@@ -1,20 +1,74 @@
-# Sea Breeze Travels — Frontend
+# Nusa Gili Express
 
-React + Vite + Tailwind CSS v4.
+Website company profile untuk **Nusa Gili Express**, layanan travel spesialis *island hopping* privat yang mengajak wisatawan menjelajahi gili eksotis di Lombok Barat seperti Gili Nanggu, Sudak, dan Kedis, lengkap dengan kapal, alat snorkeling, dan antar-jemput yang aman dan nyaman.
 
-Home page with three sections (**Home**, **Destinations**, **Contact**) plus a **destination detail page** at `/destinations/:id`. The menu scrolls to each section (`/#home`, `/#destinations`, `/#contact`) from any page.
+Dibangun dengan **React**, **Vite**, dan **Tailwind CSS v4**.
+
+---
+
+## Fitur
+
+- **Halaman Home** dengan hero slider otomatis (tombol sebelumnya/berikutnya, indikator, dan jeda/putar).
+- **Daftar destinasi** dengan kartu berisi foto, rating, durasi, aktivitas, dan harga mulai dari.
+- **Filter destinasi** berdasarkan wilayah, lengkap dengan jumlah hasil.
+- **Halaman detail destinasi** untuk informasi lebih lengkap tiap destinasi.
+- **Form kontak** dengan tombol *Enquire* pada kartu destinasi yang memilih destinasi secara otomatis di form.
+- **Navigasi** dengan penanda menu aktif sesuai bagian yang sedang dilihat, serta menu mobile.
+- **Responsif**: nyaman dibuka di ponsel, tablet, maupun desktop.
+- **Aksesibel**: tautan *skip to content*, label ARIA, fokus keyboard yang jelas, dan menghormati pengaturan `prefers-reduced-motion`.
+
+## Tampilan
+
+**Daftar destinasi**: kartu dengan foto, rating, durasi, aktivitas, dan harga, lengkap dengan filter wilayah.
+
+
+![Home](src/assets/screnshot/home.png)
+
+![Destinasi](src/assets/screnshot/destinasi.png)
+
+![Kontak](src/assets/screnshot/kontak.png)
+
+---
+
+## Teknologi
+
+| Kebutuhan | Teknologi |
+| --- | --- |
+| Framework UI | React 19 |
+| Build tool | Vite |
+| Styling | Tailwind CSS v4 (`@tailwindcss/vite`) |
+| Routing | React Router |
+| Ikon | Lucide React |
+| Linter | Oxlint |
+| Font | Plus Jakarta Sans |
+
+## Memulai
+
+### Prasyarat
+
+- [Node.js](https://nodejs.org/) versi **20.19 atau lebih baru** (disarankan LTS terbaru)
+- npm (sudah termasuk saat menginstal Node.js)
+
+### Instalasi
 
 ```bash
+# masuk ke folder proyek
+cd frontend
+
+# pasang dependency
 npm install
-npm run dev      # development
-npm run build    # production build
-npm run lint
+
+# jalankan server pengembangan
+npm run dev
 ```
 
-Notes
-- Destination data lives in `src/data/destinations.js`; navigation and contact details in `src/data/navigation.js`.
-- Clicking a destination card opens its detail page with an image/video slider, highlights, travel tips and a trip summary.
-- Clicking "Enquire about this trip" on the detail page goes to the contact form with that destination pre-selected.
-- Slides are built from `heroImage` + `gallery` + the optional `videos` array of each destination (`type: 'video'` for an mp4, or `type: 'youtube'` with an `id`). The videos in `destinations.js` are sample placeholders; replace them with real ones.
-- When deploying, configure your host to serve `index.html` for all routes (SPA fallback) so `/destinations/bali` works on refresh.
-- The contact form is front-end only. Connect it to a backend or an email service (e.g. Formspree, EmailJS) to receive messages.
+Buka alamat yang tampil di terminal (biasanya `http://localhost:5173`).
+
+### Perintah yang tersedia
+
+| Perintah | Fungsi |
+| --- | --- |
+| `npm run dev` | Menjalankan server pengembangan dengan hot reload |
+| `npm run build` | Membuat build produksi di folder `dist/` |
+| `npm run preview` | Menjalankan hasil build secara lokal untuk dicek |
+| `npm run lint` | Memeriksa kode dengan Oxlint |
