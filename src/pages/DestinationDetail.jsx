@@ -71,7 +71,6 @@ export default function DestinationDetail({ onEnquire }) {
     duration,
     accommodation,
     activities,
-    startingPrice,
     location,
     description,
     highlights,
@@ -167,8 +166,6 @@ export default function DestinationDetail({ onEnquire }) {
             <div className="rounded-xl border border-line bg-white p-6 shadow-card lg:sticky lg:top-24">
               <p className="text-xs text-muted">From</p>
               <p className="text-3xl font-bold text-ink">
-                ${startingPrice.toLocaleString('en-US')}
-                <span className="ml-1 text-sm font-medium text-muted">/ person</span>
               </p>
 
               <ul className="mt-6 flex flex-col gap-4 border-t border-line pt-6">

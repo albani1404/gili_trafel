@@ -15,8 +15,7 @@ export default function DestinationsSection() {
             Destinations
           </h2>
           <p className="mt-3 text-base leading-relaxed text-muted md:text-lg">
-            Beaches, islands and coastlines we have handpicked, each with a trip length, stay and
-            activities already planned.
+            Pantai, pulau, dan garis pantai yang telah kami pilih secara khusus, masing-masing dengan durasi perjalanan, lama menginap, dan kegiatan yang sudah direncanakan.
           </p>
         </div>
 
@@ -30,11 +29,10 @@ export default function DestinationsSection() {
                   type="button"
                   onClick={() => setActiveCategory(category)}
                   aria-pressed={isActive}
-                  className={`cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ${
-                    isActive
+                  className={`cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ${isActive
                       ? 'border-brand bg-brand text-white'
                       : 'border-line bg-white text-muted hover:border-brand hover:text-brand'
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>

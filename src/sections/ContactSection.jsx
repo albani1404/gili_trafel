@@ -67,8 +67,7 @@ export default function ContactSection({ destination, onDestinationChange }) {
             Contact us
           </h2>
           <p className="mt-3 text-base leading-relaxed text-muted md:text-lg">
-            Questions about a destination, or ready to plan a trip? Send us a message and we will
-            get back to you.
+            Ada pertanyaan tentang destinasi, atau sudah siap merencanakan perjalanan? Kirimkan pesan kepada kami dan kami akan menghubungi Anda kembali.
           </p>
         </div>
 
