@@ -1,25 +1,3 @@
-/**
- * MEDIA LOKAL
- * -----------------------------------------------------------------------------
- * Foto diambil otomatis dari folder:
- *
- *   src/assets/conten/<nama-folder>/
- *
- * Nama folder dicocokkan dengan `id` destinasi tanpa membedakan huruf besar/kecil,
- * dan garis bawah / spasi dianggap sama dengan tanda hubung. Contoh:
- *
- *   Gili_nanggu  ->  id: 'gili-nanggu'
- *
- * Aturan isi folder:
- *  - Galeri          : semua foto di folder tersebut, urut sesuai nama file
- *  - Foto kartu      : `coverPhoto` pada data destinasi (nama file tanpa ekstensi,
- *                      mis. '4'). Jika kosong: file `cover.*`, lalu `hero.*`, lalu foto pertama
- *  - Foto hero/detail: `heroPhoto` pada data destinasi. Jika kosong: file `hero.*`,
- *                      lalu foto kartu
- *
- * Format foto: jpg, jpeg, png, webp, avif. Tidak perlu mengedit file ini saat
- * menambah atau mengganti foto, cukup taruh filenya di folder yang benar.
- */
 const imageFiles = import.meta.glob(
   '../assets/conten/*/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
   { eager: true, import: 'default' },
