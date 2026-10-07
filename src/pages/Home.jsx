@@ -15,13 +15,21 @@ const features = [
   { icon: BadgeCheck, title: 'Harga yang pantas', text: 'Akomodasi dan pengalaman dengan peringkat terbaik dengan harga yang jujur.' },
 ];
 
-// Hero slides: a handful of featured destinations (1920px wide)
-const heroSlides = ['bali', 'maldives', 'raja-ampat', 'komodo']
+// Slide hero: gili pilihan, foto diambil dari src/assets/conten/<folder>/.
+// Gili tanpa foto otomatis dilewati.
+const heroSlides = [
+  'gili-nanggu',
+  'gili-kedis',
+  'gili-gede',
+  'gili-sudak',
+  'gili-asahan',
+  'gili-layar',
+]
   .map(getDestinationById)
-  .filter(Boolean)
+  .filter((d) => d?.heroImage)
   .map((d) => ({
     id: d.id,
-    src: d.heroImage.replace(/w=\d+/, 'w=1920'),
+    src: d.heroImage,
     label: d.name,
     to: `/destinations/${d.id}`,
   }));
@@ -34,7 +42,7 @@ export default function Home({ destination, onDestinationChange }) {
         id="home"
         className="relative isolate flex min-h-[520px] scroll-mt-16 items-center overflow-hidden bg-ink md:min-h-[640px]"
       >
-        <HeroSlider slides={heroSlides} />
+        {heroSlides.length > 0 && <HeroSlider slides={heroSlides} />}
 
         <div className="container-page pb-28 pt-20">
           <div className="animate-rise max-w-2xl">
@@ -59,7 +67,7 @@ export default function Home({ destination, onDestinationChange }) {
       {/* Why us */}
       <section className="border-b border-line bg-sand" aria-labelledby="why-heading">
         <h2 id="why-heading" className="sr-only">
-          Mengapa bepergian dengan Sea Breeze
+          Mengapa bepergian dengan Nusa Gili Express
         </h2>
         <ul className="container-page grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {features.map(({ icon: Icon, title, text }) => (

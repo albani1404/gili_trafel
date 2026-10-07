@@ -4,7 +4,7 @@ import Rating from './Rating';
 import SmartImage from './SmartImage';
 
 export default function DestinationCard({ destination }) {
-  const { id, name, country, badge, rating, duration, activities, image } = destination;
+  const { id, name, location, badge, rating, duration, activities, image } = destination;
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-line bg-white shadow-card transition-shadow duration-200 hover:shadow-card-hover">
@@ -31,7 +31,7 @@ export default function DestinationCard({ destination }) {
 
         <p className="mt-1 flex items-center gap-1.5 text-sm text-muted">
           <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-          {country}
+          {location}
         </p>
 
         <p className="mt-4 flex items-center gap-1.5 text-sm text-muted">

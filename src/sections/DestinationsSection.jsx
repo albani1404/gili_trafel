@@ -20,25 +20,29 @@ export default function DestinationsSection() {
         </div>
 
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div role="group" aria-label="Filter by region" className="flex flex-wrap gap-2">
-            {destinationCategories.map((category) => {
-              const isActive = activeCategory === category;
-              return (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => setActiveCategory(category)}
-                  aria-pressed={isActive}
-                  className={`cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ${isActive
+          {destinationCategories.length > 1 ? (
+            <div role="group" aria-label="Filter by region" className="flex flex-wrap gap-2">
+              {destinationCategories.map((category) => {
+                const isActive = activeCategory === category;
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    onClick={() => setActiveCategory(category)}
+                    aria-pressed={isActive}
+                    className={`cursor-pointer rounded-lg border px-4 py-2 text-sm font-semibold transition-colors ${isActive
                       ? 'border-brand bg-brand text-white'
                       : 'border-line bg-white text-muted hover:border-brand hover:text-brand'
-                    }`}
-                >
-                  {category}
-                </button>
-              );
-            })}
-          </div>
+                      }`}
+                  >
+                    {category}
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <span />
+          )}
 
           <p className="text-sm text-muted" aria-live="polite">
             {filtered.length} {filtered.length === 1 ? 'destination' : 'destinations'}

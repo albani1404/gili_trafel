@@ -56,7 +56,7 @@ export default function DestinationDetail({ onEnquire }) {
   useEffect(() => {
     if (!destination) return;
     const previous = document.title;
-    document.title = `${destination.name}, ${destination.country} — Sea Breeze Travels`;
+    document.title = `${destination.name}, ${destination.country} — Nusa Gili Express`;
     return () => {
       document.title = previous;
     };
@@ -86,7 +86,7 @@ export default function DestinationDetail({ onEnquire }) {
     .slice(0, 3);
 
   const whatsappLink = `${contactDetails.whatsapp}?text=${encodeURIComponent(
-    `Hi Sea Breeze, I'd like to know more about the ${name} trip.`,
+    `Halo Nusa Gili Express, saya ingin tahu lebih lanjut tentang trip ke ${name}.`,
   )}`;
 
   return (
@@ -164,11 +164,7 @@ export default function DestinationDetail({ onEnquire }) {
           {/* Booking card */}
           <aside className="lg:col-span-4" aria-label="Trip summary">
             <div className="rounded-xl border border-line bg-white p-6 shadow-card lg:sticky lg:top-24">
-              <p className="text-xs text-muted">From</p>
-              <p className="text-3xl font-bold text-ink">
-              </p>
-
-              <ul className="mt-6 flex flex-col gap-4 border-t border-line pt-6">
+              <ul className="flex flex-col gap-4">
                 <Fact icon={Clock} label="Duration">
                   {duration}
                 </Fact>
